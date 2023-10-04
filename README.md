@@ -35,7 +35,7 @@ webt-core-object-oriented-php-with-version-control was forked for the team
 ### Acceptance Criteria
 - A plain static HTML view for a single page is available
 - The view features at least 20 video entries (which can use the same resource)
-- Each entry features a title, the origin (e.g.: “YouTube”) and is embedded for autoplay
+- Each entry features a title, the origin (e.g.: “YouTube”) and is embedded
 - The page features CSS
 - The page is semantically valid for HTML5
 
