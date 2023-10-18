@@ -29,7 +29,7 @@
 <body>
 <?php
 include 'video.php';
-$YT= new youtubeV('Geschichte', 'https://www.youtube-nocookie.com/watch?v=9thqhgcDByA');
+$YT= new youtubeV('Geschichte', 'https://www.youtube.com/watch?v=9thqhgcDByA');
 $Yhtml = $YT->getHTML();
 $VI= new vimeoV('Enders', 'https://vimeo.com/875228916');
 $Vhtml = $VI->getHTML();
