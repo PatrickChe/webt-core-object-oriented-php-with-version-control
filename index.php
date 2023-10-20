@@ -35,9 +35,9 @@ HT;
 echo '<body>';
     include ("youtubeV.php");
     include ("vimeoV.php");
-    $YT = new youtubeV('Geschichte', 'https://www.youtube.com/embed/asGx8V5-ir0?si=c7wXhkELL9UFucOb');
+    $YT = new youtubeV('Geschichte', 'c7wXhkELL9UFucOb');
     $Yhtml = $YT->getHTML();
-    $VI = new vimeoV('Enders', 'https://vimeo.com/875228916');
+    $VI = new vimeoV('Enders', '875467859');
     $Vhtml = $VI->getHTML();
 
     #Youtube
@@ -52,7 +52,7 @@ echo '<body>';
     echo "<h2 class='text'> Vimeo </h2>";
     echo "<div class='flex'>";
     for ($i = 0; $i < 5; $i++) {
-        echo "<p> $Vhtml </p>";
+        echo "<p class='rand'> $Vhtml </p>";
     }
     echo "</div>";
 echo '</body>';

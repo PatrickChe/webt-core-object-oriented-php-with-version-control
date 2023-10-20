@@ -3,8 +3,7 @@ require_once 'video.php';
 
 class vimeoV extends video{
     public function getHTML(): String {
-        return "<iframe src='$this->source' width='560' height='315' frameborder='0' allow='autoplay; fullscreen; 
-        picture-in-picture' allowfullscreen></iframe>";
+        return "<iframe src='https://player.vimeo.com/video/$this->source' width='640' height='346' frameborder='0' allow='autoplay; fullscreen; picture-in-picture' allowfullscreen></iframe>";
     }
 }
 ?>
