@@ -1,3 +1,5 @@
+<?php
+echo <<<HT
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,49 +8,54 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         width: 100%;
         background-color: black;
     }
-    .flex{
+
+    .flex {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .rand{
+
+    .rand {
         color: white;
         margin-top: 10px;
         border-style: solid;
     }
-    .text{
+
+    .text {
         color: white;
         text-align: center;
     }
 </style>
-<body>
-<?php
-include 'video.php';
-$YT= new youtubeV('Geschichte', 'https://www.youtube.com/watch?v=9thqhgcDByA');
-$Yhtml = $YT->getHTML();
-$VI= new vimeoV('Enders', 'https://vimeo.com/875228916');
-$Vhtml = $VI->getHTML();
+HT;
+echo '<body>';
+    include ("youtubeV.php");
+    include ("vimeoV.php");
+    $YT = new youtubeV('Geschichte', 'https://www.youtube.com/embed/asGx8V5-ir0?si=c7wXhkELL9UFucOb');
+    $Yhtml = $YT->getHTML();
+    $VI = new vimeoV('Enders', 'https://vimeo.com/875228916');
+    $Vhtml = $VI->getHTML();
 
-#Youtube
-echo "<h2 class='text'> Youtube </h2>";
-echo "<div class='flex'>";
-for($i = 0; $i < 5; $i++){
-    echo "<p class='rand'> $Yhtml </p>";
-}
-echo "</div>";
+    #Youtube
+    echo "<h2 class='text'> Youtube </h2>";
+    echo "<div class='flex'>";
+    for ($i = 0; $i < 5; $i++) {
+        echo "<p class='rand'> $Yhtml </p>";
+    }
+    echo "</div>";
 
-#Vimeo
-echo "<h2 class='text'> Vimeo </h2>";
-echo "<div class='flex'>";
-for($i = 0; $i < 5; $i++){
-    echo "<p> $Vhtml </p>";
-}
-echo "</div>";
+    #Vimeo
+    echo "<h2 class='text'> Vimeo </h2>";
+    echo "<div class='flex'>";
+    for ($i = 0; $i < 5; $i++) {
+        echo "<p> $Vhtml </p>";
+    }
+    echo "</div>";
+echo '</body>';
+echo '</html>';
 ?>
-</body>
-</html>
+
