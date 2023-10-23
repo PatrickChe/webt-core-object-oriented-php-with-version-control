@@ -7,6 +7,7 @@ echo <<<HT
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+//styling
 <style>
     body {
         width: 100%;
@@ -35,6 +36,9 @@ HT;
 echo '<body>';
     include ("youtubeV.php");
     include ("vimeoV.php");
+
+    //Erstellung eines Youtube- und Viemovideoobjekts
+    //Der HTML Code der eingebetteten Videos wird in eigenen Variablen gespeichert
     $YT = new youtubeV('Geschichte', 'c7wXhkELL9UFucOb');
     $Yhtml = $YT->getHTML();
     $VI = new vimeoV('Enders', '875467859');
@@ -42,6 +46,7 @@ echo '<body>';
 
     #Youtube
     echo "<h2 class='text'> Youtube </h2>";
+    //In einer For-schleife wird das selbe iFrame 5 mal ausgegeben
     echo "<div class='flex'>";
     for ($i = 0; $i < 5; $i++) {
         echo "<p class='rand'> $Yhtml </p>";
@@ -50,6 +55,7 @@ echo '<body>';
 
     #Vimeo
     echo "<h2 class='text'> Vimeo </h2>";
+    //In einer For-schleife wird das selbe iFrame 5 mal ausgegeben
     echo "<div class='flex'>";
     for ($i = 0; $i < 5; $i++) {
         echo "<p class='rand'> $Vhtml </p>";
