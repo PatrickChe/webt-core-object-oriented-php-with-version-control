@@ -1,5 +1,6 @@
 <?php
-//Das require Statement wird benötigt, um auf das Interface zuzugreifen, dass es sich in einem anderen File befindet
+//Das require Statement wird benötigt, um auf das Interface zuzugreifen, da es sich in einem anderen File befindet
+//das _once verhindert, dass das Interface mehrmals inkludiert wird
 require_once 'ivideo.php';
 
 abstract class video implements ivideo{

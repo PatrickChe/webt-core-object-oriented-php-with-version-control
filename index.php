@@ -34,8 +34,8 @@ echo <<<HT
 </style>
 HT;
 echo '<body>';
-    include ("youtubeV.php");
-    include ("vimeoV.php");
+    include ("src/youtubeV.php");
+    include ("src/vimeoV.php");
 
     //Erstellung eines Youtube- und Viemovideoobjekts
     //Der HTML Code der eingebetteten Videos wird in eigenen Variablen gespeichert

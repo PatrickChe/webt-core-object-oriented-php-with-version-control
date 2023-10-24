@@ -4,7 +4,7 @@ interface ivideo {
     public function getName() : String;
     //Gibt die Quelle, welche beim Erstellen des Objekts mitgegebn wird, aus
     public function getSource() : String;
-    //Gibt den HTML Code für das embeded Video aus
+    //Gibt den HTML Code für das eingebette Video aus
     public function getHTML() : String;
 }
 ?>
