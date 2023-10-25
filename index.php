@@ -22,9 +22,12 @@ echo <<<HT
     }
 
     .rand {
+        display: flex;
+        flex-direction: column;
         color: white;
         margin-top: 10px;
         border-style: solid;
+        text-align: center;
     }
 
     .text {
@@ -34,31 +37,35 @@ echo <<<HT
 </style>
 HT;
 echo '<body>';
+echo '<h1 class="text"> Horror trailers </h1>';
     include ("src/youtubeV.php");
     include ("src/vimeoV.php");
 
-    //Erstellung eines Youtube- und Viemovideoobjekts
-    //Der HTML Code der eingebetteten Videos wird in eigenen Variablen gespeichert
-    $YT = new youtubeV('Geschichte', 'c7wXhkELL9UFucOb');
-    $Yhtml = $YT->getHTML();
-    $VI = new vimeoV('Enders', '875467859');
-    $Vhtml = $VI->getHTML();
+    //Erstellung eines Youtube- und Viemovideoobjekte-Arrays
+    $Yhtml = [new youtubeV('Halloween Park', 'https://www.youtube.com/embed/jLCxKM6f_20?si=ORna7PydNyzc7QJW'),new youtubeV('Der Exorzist', 'https://www.youtube.com/embed/mmfbLImFKu8?si=BwpcyqfRkjdU-5Jm'), new youtubeV('Saw X', 'https://www.youtube.com/embed/V5TnSxuIsa0?si=Vo8cLcaUFFquPxIc'), new youtubeV('Sinister', 'https://www.youtube.com/embed/_kbQAJR9YWQ?si=H8dQ10NxE_J_q4OS'), new youtubeV('fnaf', 'https://www.youtube.com/embed/5G0LbuoUqsA?si=c1HgWXbbZPCAKEv1')];
+    $Vhtml = [new vimeoV('Lair', '645194318'), new vimeoV('The Graduate', '208950300'), new vimeoV('Trail', '708916255'), new vimeoV('Marked Ones', '843446040'), new vimeoV('Scarrafone', '685782281')];
 
     #Youtube
     echo "<h2 class='text'> Youtube </h2>";
-    //In einer For-schleife wird das selbe iFrame 5 mal ausgegeben
+    //In einer Foreach-schleife wird das Array mit den Youtube-Videos durchgegangen
     echo "<div class='flex'>";
-    for ($i = 0; $i < 5; $i++) {
-        echo "<p class='rand'> $Yhtml </p>";
+    foreach ($Yhtml as $v) {
+        //Der HTML Code und der Name der eingebetteten Videos wird in eigenen Variablen gespeichert und anschliesend ausgegeben
+        $video = $v->getHTML();
+        $name = $v->getName();
+        echo "<p class='rand'>$video $name</p>";
     }
     echo "</div>";
 
     #Vimeo
     echo "<h2 class='text'> Vimeo </h2>";
-    //In einer For-schleife wird das selbe iFrame 5 mal ausgegeben
+    //In einer Foreach-schleife wird das Array mit den Vimeo-Videos durchgegangen
     echo "<div class='flex'>";
-    for ($i = 0; $i < 5; $i++) {
-        echo "<p class='rand'> $Vhtml </p>";
+    foreach ($Vhtml as $v) {
+        //Der HTML Code und der Name der eingebetteten Videos wird in eigenen Variablen gespeichert und anschliesend ausgegeben
+        $video = $v->getHTML();
+        $name = $v->getName();
+        echo "<p class='rand'>$video $name</p>";
     }
     echo "</div>";
 echo '</body>';
